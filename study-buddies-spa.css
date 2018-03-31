@@ -910,7 +910,7 @@ input.check-box:checked ~ label.text-label {
   color: white;
   font-weight: 500;
   padding: 2px 6px 3px;
-  border-radius: 10px
+  border-radius: 10px;
 }
 .lesson-title label {
   line-height: 1em;
@@ -1027,7 +1027,7 @@ input.check-box:checked ~ label.text-label {
     padding: 2rem 2rem;
   }
 }
-@media only screen and (max-width:680px) {
+@media only screen and (max-width:650px) {
   footer {
     flex-direction: column;
     height: auto;
