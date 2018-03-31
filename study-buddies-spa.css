@@ -2,6 +2,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+html {
+  height: 100%;
+}
 a {
   text-decoration: none;
 }
@@ -643,8 +646,8 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   color: #333;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100%;
+  overflow: auto;
 }
 header {
   background-color: #02b7e9;
@@ -688,6 +691,10 @@ label[for=progress-bar] {
 footer {
   background-color: #687788;
   height: 60px;
+  justify-self: flex-end;
+}
+footer p {
+  cursor: default;
 }
 .foot-note div {
   display: inline-block;
@@ -699,12 +706,10 @@ footer {
 .foot-note .text-left {
   text-align: right;
   color: white;
-  width: 200px;
   opacity: 0.8;
 }
 .text-right {
   color: white;
-  width: 200px;
   opacity: 0.8;
 }
 .foot-note .icon {
@@ -729,6 +734,7 @@ footer {
 .social-links {
   list-style: none;
   font-size: 22px;
+  padding-left: 0;
 }
 .social-links li {
   display: inline-block;
@@ -750,7 +756,7 @@ footer {
 
 .text-left:hover, .text-right:hover {
   color: #333;
-  font-size: 12px;
+  /* font-size: 12px; */
   opacity: 1;
 }
 
@@ -898,12 +904,12 @@ input.check-box:checked ~ label.text-label {
 .lesson-title .muted {
   font-size: 14px;
   position: absolute;
-  top: 5px;
+  top: 0px;
   right: 40px;
   display: none;
   color: white;
   font-weight: 500;
-  padding: 0 5px;
+  padding: 2px 6px 3px;
   border-radius: 10px
 }
 .lesson-title label {
@@ -981,4 +987,64 @@ input.check-box:checked ~ label.text-label {
   margin-top: 3px;
   width: 85;
   height: 85px;
+}
+
+/* ------------------------------------------------------ */
+
+/* media queries */
+@media only screen and (max-width:1140px) {
+  .col-width-3 {
+    min-width: 320px;
+  }
+  .col-width-7 {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:1090px) {
+  .lesson-title .muted {
+    margin-top: 3px;
+    position: static;
+    width: 133px;
+    transition: all .5s ease;
+  }
+  .lesson-title {
+    padding-right: 30px;
+  }
+}
+@media only screen and (max-width:850px) {
+  main.display-flex {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  .course-list {
+    margin-right: 0;
+    padding-left: 0;
+  }
+  .col-width-3 {
+    width: 100%;
+  }
+  .panels {
+    padding: 2rem 2rem;
+  }
+}
+@media only screen and (max-width:680px) {
+  footer {
+    flex-direction: column;
+    height: auto;
+  }
+  .copyright {
+    padding: 1rem 0;
+  }
+  .social-links {
+    margin: 1rem 26px 1rem 0;
+  }
+}
+@media only screen and (max-width:550px) {
+  .padding-2 {
+    padding: .5rem .3rem;
+    transition: all .5s ease;
+  }
+  .padding-x-5 {
+    padding: 0;
+  }
 }
